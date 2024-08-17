@@ -53,7 +53,8 @@ RUN ./emsdk activate latest-fastcomp
 WORKDIR ../..
 
 # Build moonlight
-#RUN git clone https://github.com/OneLiberty/moonlight-chrome-tizen
+RUN git clone https://github.com/kor-trickster/moonlight-chrome-tizen
+RUN git checkout my
 COPY --chown=moonlight . ./moonlight-chrome-tizen
 
 RUN cmake \

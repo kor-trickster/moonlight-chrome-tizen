@@ -13,6 +13,9 @@ function remoteControllerHandler(e) {
         case tvKey.KEY_VOLUME_UP:
         case tvKey.KEY_VOLUME_DOWN:
         case tvKey.KEY_VOLUME_MUTE:
+        case tvKey.KEY_CHANNEL_UP:
+        case tvKey.KEY_CHANNEL_DOWN:
+        case tvKey.KEY_CHANNEL_LIST:
             e.preventDefault();
             break;
         default:
@@ -48,11 +51,14 @@ function remoteControllerHandler(e) {
         case tvKey.KEY_VOLUME_MUTE:
             tizen.tvaudiocontrol.setMute();
             break;
-        case tvKey.KEY_RED:
-            Module.stopStream();
+        case tvKey.KEY_CHANNEL_DOWN:
+            Navigation.wakeOnLan();
             break;
-        case tvKey.KEY_GREEN:
+        case tvKey.KEY_CHANNEL_UP:
             Navigation.startBtn();
+            break;
+        case tvKey.KEY_CHANNEL_LIST:
+            Navigation.pop();
             break;
     }
 }

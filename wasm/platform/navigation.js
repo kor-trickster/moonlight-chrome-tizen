@@ -101,6 +101,12 @@ const Views = {
         element.children[1].click();
       }
     },
+    wakeOnLan: function () {
+      const element = this.view.current();
+      if (element.id != 'addHostCell') {
+        element.children[0].children[1].children[0].click();
+      }
+    },
     selectBtn: function () { }, //for future use
     enter: function () { mark(this.view.current()) },
     leave: function () { unmark(this.view.current()) },
@@ -434,6 +440,7 @@ const Navigation = (function () {
     down: runOp('down'),
     startBtn: runOp('startBtn'),
     selectBtn: runOp('selectBtn'),
+    wakeOnLan: runOp('wakeOnLan'),
     push: Stack.push,
     change: Stack.change,
     pop: Stack.pop,
